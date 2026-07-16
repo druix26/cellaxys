@@ -31,3 +31,13 @@ test("server-renders a focused avatar landing page", async () => {
   assert.match(html, /Consultation and imaging determine candidacy/i);
   assert.match(html, /Patient Pledge/i);
 });
+
+test("server-renders clinical staff before the patient pledge", async () => {
+  const response = await render("/about");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Meet Our Clinical Staff/i);
+  assert.match(html, /Nancy Vargas/i);
+  assert.match(html, /Alejandra Bernal/i);
+  assert.ok(html.indexOf("Meet Our Clinical Staff") < html.indexOf("THE PATIENT PLEDGE"));
+});
