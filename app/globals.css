@@ -239,41 +239,26 @@ h3 {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  color: var(--ink-strong);
-  font-family: var(--font-sans);
-  font-size: 1.38rem;
-  font-weight: 700;
-  letter-spacing: -0.04em;
+  line-height: 0;
 }
 
-.brand-mark {
-  position: relative;
-  display: grid;
-  width: 29px;
-  height: 29px;
-  place-items: center;
-  border: 2px solid var(--ink);
-  border-radius: 50%;
+.site-header .brand {
+  padding: 7px 11px;
+  border-radius: 7px;
+  background: var(--ink-strong);
+  box-shadow: 0 8px 18px rgba(32, 57, 76, 0.14);
+  transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
-.brand-mark::after {
-  position: absolute;
-  right: -3px;
-  bottom: 1px;
-  width: 9px;
-  height: 9px;
-  border: 3px solid #fff;
-  border-radius: 50%;
-  background: var(--coral);
-  content: "";
-}
-
-.brand-mark span {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
+.site-header .brand:hover {
   background: var(--ink);
+  box-shadow: 0 11px 22px rgba(32, 57, 76, 0.2);
+  transform: translateY(-1px);
+}
+
+.brand-logo {
+  width: clamp(160px, 13vw, 184px);
+  height: auto;
 }
 
 .desktop-nav {
@@ -2095,15 +2080,10 @@ h3 {
 
 .brand-light {
   margin-bottom: 25px;
-  color: #fff;
 }
 
-.brand-light .brand-mark {
-  border-color: #fff;
-}
-
-.brand-light .brand-mark span {
-  background: #fff;
+.brand-light .brand-logo {
+  width: min(210px, 100%);
 }
 
 .footer-brand > p {
@@ -2529,6 +2509,14 @@ h3 {
 
   h2 {
     font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .site-header .brand {
+    padding: 6px 9px;
+  }
+
+  .brand-logo {
+    width: 150px;
   }
 
   .section {

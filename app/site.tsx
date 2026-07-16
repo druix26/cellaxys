@@ -9,6 +9,8 @@ import {
   type ReviewItem,
 } from "./interactive";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const pageSlugs = [
   "knee-pain",
   "back-neck-pain",
@@ -225,7 +227,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="footer-main">
         <div className="footer-brand">
-          <Link className="brand brand-light" href="/"><span className="brand-mark" aria-hidden="true"><span /></span><span>Cellaxys</span></Link>
+          <Link className="brand brand-light" href="/" aria-label="Cellaxys home"><img className="brand-logo" src={`${basePath}/cellaxys-logo.webp`} alt="" width="270" height="51" /></Link>
           <p>Physician-led, imaging-based regenerative care in Las Vegas.</p>
           <div className="pledge-mini"><span aria-hidden="true">✓</span><div><strong>Patient Pledge</strong><small>Tracked recovery at weeks 1, 12, 24 & 52</small></div></div>
         </div>

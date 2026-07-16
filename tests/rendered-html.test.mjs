@@ -20,6 +20,8 @@ test("server-renders the Cellaxys StoryBrand homepage", async () => {
   assert.match(html, /Told surgery is your only option/i);
   assert.match(html, /Where does it hurt/i);
   assert.match(html, /Book Your Consultation/i);
+  assert.ok((html.match(/cellaxys-logo\.webp/g)?.length ?? 0) >= 2);
+  assert.doesNotMatch(html, /brand-mark/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 

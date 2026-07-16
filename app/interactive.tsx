@@ -28,10 +28,13 @@ export function Header() {
     <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
       <div className="header-inner">
         <Link className="brand" href="/" aria-label="Cellaxys home">
-          <span className="brand-mark" aria-hidden="true">
-            <span />
-          </span>
-          <span>Cellaxys</span>
+          <img
+            className="brand-logo"
+            src={`${basePath}/cellaxys-logo.webp`}
+            alt=""
+            width="270"
+            height="51"
+          />
         </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
