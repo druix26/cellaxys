@@ -80,6 +80,44 @@ export const pageMetadata: Record<PageSlug, { title: string; description: string
 const doctorMohajer = "https://cellaxys.atata.dev/wp-content/uploads/2026/07/Dr-Pouya-Mohajer-1.jpg";
 const doctorBady = "https://cellaxys.atata.dev/wp-content/uploads/2026/07/Dr-Pejman-Bady-1.jpg";
 
+const clinicalStaff = [
+  {
+    name: "Nancy Vargas",
+    role: "Fractional Supervisor",
+    image: "https://cellaxys.atata.dev/wp-content/uploads/2026/07/Nancy-Vargas.jpg",
+  },
+  {
+    name: "Tiffany Watson",
+    role: "Procedure Lead MA",
+    image: "https://cellaxys.atata.dev/wp-content/uploads/2026/07/Tiffany-Watson.jpg",
+  },
+  {
+    name: "Eden Arthur",
+    role: "Medical Office Specialist",
+    image: "https://cellaxys.atata.dev/wp-content/uploads/2026/07/Eden-Arthur.jpg",
+  },
+  {
+    name: "Ashley Barrales",
+    role: "Medical Office Specialist",
+    image: "https://cellaxys.atata.dev/wp-content/uploads/2026/07/Ashley-Barrales.jpg",
+  },
+  {
+    name: "Edel Maureen Ngo",
+    role: "Medical Researcher",
+    image: "https://cellaxys.atata.dev/wp-content/uploads/2026/07/Edel-Maureen-Ngo.jpg",
+  },
+  {
+    name: "Carlos Ayala",
+    role: "Phone Sales Lead",
+    image: "https://cellaxys.atata.dev/wp-content/uploads/2026/07/Carlos-Ayala.jpg",
+  },
+  {
+    name: "Alejandra Bernal",
+    role: "Phone Operator & Scheduler",
+    image: "https://cellaxys.atata.dev/wp-content/uploads/2026/07/Alejandra-Bernal.jpg",
+  },
+] as const;
+
 const reviews: ReviewItem[] = [
   {
     name: "Julie Ingleston",
@@ -459,6 +497,16 @@ function AboutPage() {
         <div className="physician-grid">
           <article className="physician-card"><img src={doctorMohajer} alt="Dr. Pouya Mohajer" /><div><span className="pill">DIRECTOR, INTERVENTIONAL SPINE MEDICINE</span><h2>Dr. Pouya Mohajer</h2><p>Board-certified in Anesthesiology and Interventional Pain Medicine, fellowship-trained at Harvard, and a UCLA alumnus.</p><p>Known for translating complex imaging into a clear, practical conversation patients can use to make a confident decision.</p><a className="text-link" href="https://cellaxys.atata.dev/dr-pouya-mohajer/" target="_blank" rel="noreferrer">Full physician profile →</a></div></article>
           <article className="physician-card reverse"><img src={doctorBady} alt="Dr. Pejman Bady" /><div><span className="pill">MEDICAL DIRECTOR</span><h2>Dr. Pejman Bady</h2><p>Medical Director with a medical degree from Western University of Health Sciences and executive education at USC Marshall.</p><p>Patients value his patient, option-focused approach and the time he takes to explain what each path really involves.</p><a className="text-link" href="https://cellaxys.atata.dev/dr-pejman-bady/" target="_blank" rel="noreferrer">Full physician profile →</a></div></article>
+        </div>
+      </div></section>
+      <section className="section clinical-staff-section"><div className="container"><SectionHeading eyebrow="THE TEAM BEHIND YOUR CARE" title="Meet Our Clinical Staff" intro="Our dedicated clinical staff supports every step of your care, from scheduling and patient coordination to imaging, research, and procedure assistance, ensuring a seamless patient experience." />
+        <div className="clinical-staff-grid">
+          {clinicalStaff.map((member) => (
+            <article className="staff-card" key={member.name}>
+              <div className="staff-photo"><img src={member.image} alt={member.name} /></div>
+              <div className="staff-card-copy"><h3>{member.name}</h3><p>{member.role}</p></div>
+            </article>
+          ))}
         </div>
       </div></section>
       <section className="section pledge-section"><div className="container pledge-grid"><div className="pledge-seal"><span>52</span><small>weeks tracked</small></div><div><SectionHeading eyebrow="THE PATIENT PLEDGE" title="Care that keeps paying attention after procedure day." /><p>Outcome check-ins at weeks 1, 12, 24, and 52 help keep recovery visible and give the team a clear framework for follow-up.</p><Link className="button" href="/how-it-works">See how the plan works →</Link></div></div></section>
