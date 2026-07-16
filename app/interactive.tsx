@@ -1,7 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useState } from "react";
+import Link from "./site-link";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const mainLinks = [
   { href: "/knee-pain", label: "Knee Pain" },
@@ -113,7 +115,10 @@ export function ConsultationForm({ compact = false }: { compact?: boolean }) {
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitting(true);
-    window.setTimeout(() => window.location.assign("/thank-you"), 450);
+    window.setTimeout(
+      () => window.location.assign(`${basePath}/thank-you${basePath ? "/" : ""}`),
+      450,
+    );
   }
 
   const branch = painArea ? branchQuestions[painArea] : null;
