@@ -371,7 +371,7 @@ function Plan({ steps, compact = false }: { steps?: [string, string, string]; co
 function DoctorVisual() {
   return (
     <div className="doctor-visual" aria-label="Cellaxys physicians">
-      <div className="photo-frame main-photo"><img src={doctorMohajer} alt="Dr. Pouya Mohajer" /></div>
+      <div className="photo-frame main-photo"><img src={`${basePath}/cellaxys-hero.webp`} alt="Cellaxys physician at the Las Vegas clinic" width="1254" height="1254" fetchPriority="high" /></div>
       <div className="physician-chip"><img src={doctorBady} alt="Dr. Pejman Bady" /><div><strong>Physician-led care</strong><span>Imaging first. Honest answers.</span></div></div>
       <div className="downtime-card"><strong>3-4</strong><span>days of typical downtime</span><small>vs. 3-6 months for surgery</small></div>
       <span className="visual-orbit orbit-one" /><span className="visual-orbit orbit-two" />
